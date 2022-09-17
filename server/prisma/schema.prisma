@@ -10,15 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// create table games
 // o @id eh pra ele identificar como uma chave primária
 model Game {
   id        String @id @default(uuid())
-  name      String
+  title     String
   bannerUrl String
 
   ads Ad[]
 }
 
+//create table ads
 model Ad {
   id              String   @id @default(uuid())
   gameId          String
